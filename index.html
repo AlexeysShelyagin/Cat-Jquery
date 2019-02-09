@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+      function newCat (){
+        $.get("http://aws.random.cat/meow").done(
+          function (data) {
+            $("#cat").append(" <img width=700 src='" + data.file + "'>  ")
+          }
+        )
+      }
+
+
+    </script>
+    <style>
+      body{
+        background: #2F2F2F;
+      }
+      .cat_window{
+        margin: 200px;
+      }
+      .butt{
+        background: #EDE6E3;
+        border: solid;
+        border-color: #EDE6E3;
+        border-radius: 5px;
+        width: 150px;
+        height: 40px;
+        font-family: 'Major Mono Display', monospace;
+        font-size: 110%;
+        font-weight: bold;
+        box-shadow: 0 0 10px #EDE6E3;
+      }
+      .picture{
+        margin: 10px;
+        margin-left: 100px;
+        margin-right: 100px;
+        box-shadow: 0 0 10px #000000;
+        background: #4c4c4c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="picture" id="cat" align="center">
+
+    </div>
+
+    <button onclick="newCat()" class="butt">I need a cat!</button>
+  </body>
+</html>
